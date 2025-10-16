@@ -1,0 +1,31 @@
+<mvc:View controllerName="myfirstdemoapp.myfirstdemoapp.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:smarttable="sap.ui.comp.smarttable"
+    xmlns:smartfilterbar="sap.ui.comp.smartfilterbar">
+    <Page id="page" title="{i18n>title}">
+
+    
+
+<!-- Smart Filter Bar -->
+            <smartfilterbar:SmartFilterBar id="smartFilterBar" entitySet="Employees">
+              <smartfilterbar:controlConfiguration>
+                <smartfilterbar:ControlConfiguration key="EmployeeID" label="Employee ID" visibleInAdvancedArea="true"/>
+                <smartfilterbar:ControlConfiguration key="LastName" label="Last Name" visibleInAdvancedArea="true"/>
+              </smartfilterbar:controlConfiguration>
+            </smartfilterbar:SmartFilterBar>
+
+            <!-- Smart Table -->
+
+
+<!-- Smart Table -->
+            <smarttable:SmartTable id="smartTableID" smartFilterId="smartFilterBar" enableAutoBinding="true" header="Employee Data"
+                                   entitySet="Employees"
+                                   initiallyVisibleFields="EmployeeID,LastName"
+                                   tableType="ResponsiveTable" showRowCount="true">
+              <!-- <Table id="employeeTableId" mode="SingleSelectMaster"/> -->
+            </smarttable:SmartTable>
+
+    
+    </Page>
+</mvc:View>
